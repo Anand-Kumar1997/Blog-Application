@@ -1,0 +1,35 @@
+{% extends '_layout.html' %}
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cute+Font&display=swap" rel="stylesheet">
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to Blog App!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to featured content or information.</p>
+            <hr class="my-4">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+
+    {% for blog in blog_list %}
+    <div class="col-md-12" style="padding-bottom: 10px;">
+        <div class="card">
+            <div class="card-body bg-light">
+                <h4 class="card-title">{{ blog['Title'] }}</h4>
+                <p class="card-subtitle mb-2 text-muted">{{ blog['Writeup'] }}<a href="{{ url_for('full_blog_content', BlogID=blog['BlogId']) }}" class="card-link">Read more...</a></p>
+                <h5 style="font-family: Cute Font,cursive; font-size: 80%;">By - {{ blog['Owner'] }} at - {{ blog['CreateDT'] }}</h5>
+                
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

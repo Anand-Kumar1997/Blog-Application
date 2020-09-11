@@ -1,0 +1,25 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    {% for blog in blogs %}
+    <div class="col-md-4" style="padding-bottom: 10px;">
+        <div class="card">
+            <div class="card-header">
+                {{ blog['title'] }}
+            </div>
+            <div class="card-body">
+                <p>{{ blog['writeup'] }}</p>
+            </div>
+            <div class="card-footer">
+                {{ blog['dt'] }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

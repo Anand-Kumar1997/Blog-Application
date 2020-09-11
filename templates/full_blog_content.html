@@ -1,0 +1,17 @@
+{% extends '_layout.html' %}
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cute+Font&display=swap" rel="stylesheet">
+
+{% block content %}
+
+{% for i in full_blog %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">{{ i['Title'] }}</h1>
+      <p class="lead">{{ i['Writeup'] }}</p>
+      <h5 style="font-family: Cute Font,cursive; font-size: 80%; margin-right: 0%">By - {{ i['Owner'] }} at - {{ i['CreateDT'] }}</h5>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

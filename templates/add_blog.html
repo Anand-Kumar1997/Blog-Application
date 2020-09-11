@@ -1,0 +1,39 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="jumbotron">
+            <h1 class="display-4">Add Blog </h1>
+            <hr class="my-4">
+            <form method="POST">
+                <div class="form-group">
+                    <label for="title">Blog Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Add Blog title">
+
+                </div>
+                <div class="form-group">
+                    <label for="writeup">Write Up Blog</label>
+
+                    <textarea type="text" class="form-control" name="writeup" placeholder="Write Here" rows="10"
+                        cols="100"></textarea>
+                </div>
+                <div class="form-group"></div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                {% if msg %}
+                <div class="alert {% if status %} alert-success {% else %} alert-danger {% endif %} alert-dismissible fade show"
+                    role="alert">
+                    {{ msg }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
